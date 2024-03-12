@@ -1,0 +1,17 @@
+server:
+  port: 9091
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 5KB
+spring:
+  application:
+    name: heisenberg-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://124.70.136.71:8848/
+        group: heisenberg
+        namespace: demo
+        username: nacos
+        password: nacos

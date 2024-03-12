@@ -1,0 +1,22 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: heisenberg-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://124.70.136.71:8848/
+        group: heisenberg
+        namespace: demo
+        username: nacos
+        password: nacos
+    gateway:
+      routes:
+        - id: heisenberg-manage            #路由的ID，没有固定规则但要求唯一，建议配合服务名
+          uri: lb://heisenberg-manage   #匹配后提供服务的路由地址
+          predicates:
+            - Path=/login/**
+
+
+
